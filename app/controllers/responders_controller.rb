@@ -1,10 +1,14 @@
 class RespondersController < ApplicationController
+  def index
+    render json: Responder.all, status: 200
+  end
+
   def create
     responder = Responder.new(responder_params)
     if responder.save
-      render json: { responder: responder }, status: 201
+      render json: { responder: responder.hash }, status: 201
     else
-      render json: { message: emergency.errors }, status: 422
+      render json: { message: responder.errors }, status: 422
     end
   end
 

@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20150419152303) do
     t.string   "type"
     t.string   "name"
     t.integer  "capacity"
-    t.boolean  "on_duty"
+    t.boolean  "on_duty",        default: false, null: false
     t.string   "emergency_code"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "responders", ["emergency_code"], name: "index_responders_on_emergency_code"

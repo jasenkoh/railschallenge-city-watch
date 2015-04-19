@@ -4,7 +4,7 @@ class CreateResponders < ActiveRecord::Migration
       t.string :type
       t.string :name
       t.integer :capacity
-      t.boolean :on_duty
+      t.boolean :on_duty, default: false, null: false
       t.string :emergency_code, index: true, foreign_key: true
 
       t.timestamps null: false
