@@ -1,4 +1,5 @@
 class Emergency < ActiveRecord::Base
+	self.primary_key = :code
   has_many :responders
 
   validates :code, 
@@ -14,5 +15,4 @@ class Emergency < ActiveRecord::Base
 
   validates :medical_severity, presence: true,
             numericality: { greater_than_or_equal_to: 0 }
-
 end
